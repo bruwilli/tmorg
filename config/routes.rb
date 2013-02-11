@@ -1,4 +1,8 @@
 Tmorg::Application.routes.draw do
+  resources :clubs, only: [:show],
+                    constraints: { id: VALID_NETNAME_REGEX } do 
+    #resources :members
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
